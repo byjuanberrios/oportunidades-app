@@ -11,10 +11,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { getOpportunities } from "@/api";
 import type { Opportunity, OpportunitiesTableProps } from "@/types";
+import { OPPORTUNITY_TYPE_LABELS } from "@/lib/constants";
 
 export default function OpportunitiesTable({
   fetchData = getOpportunities,
-  title = "Oportunidades",
 }: OpportunitiesTableProps) {
   const [data, setData] = useState<Opportunity[] | []>([]);
   const [loading, setLoading] = useState(true);
@@ -49,7 +49,6 @@ export default function OpportunitiesTable({
 
   return (
     <>
-      <h1 className="text-2xl font-bold mb-4">{title}</h1>
       <Table>
         <TableHeader>
           <TableRow>
@@ -65,7 +64,9 @@ export default function OpportunitiesTable({
             <TableRow key={item.id}>
               <TableCell>{item.title}</TableCell>
               <TableCell>
-                <Badge variant="outline">{item.type}</Badge>
+                <Badge variant="outline">
+                  {OPPORTUNITY_TYPE_LABELS[item.type]}
+                </Badge>
               </TableCell>
               <TableCell>{item.publish_date}</TableCell>
               <TableCell>{item.close_date}</TableCell>
