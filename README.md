@@ -72,8 +72,6 @@ npm run dev
 
 El frontend estará ejecutándose en `http://localhost:5173` (o el puerto que Vite asigne).
 
-Los archivos compilados se encontrarán en el directorio `frontend/dist` y pueden ser servidos por cualquier servidor web estático.
-
 ## Estructura del Proyecto
 
 - `backend/`: Contiene el código del servidor API con Express y TypeScript
