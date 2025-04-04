@@ -1,5 +1,3 @@
-import { Response } from "express";
-
 export type Opportunity = {
   id: number;
   code: string;
@@ -9,6 +7,3 @@ export type Opportunity = {
   publish_date: string;
   close_date: string;
 };
-
-export type OpportunityResponse = Response<Opportunity>;
-export type OpportunitiesResponse = Response<Opportunity[]>;
