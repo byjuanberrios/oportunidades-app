@@ -10,6 +10,20 @@ export type Opportunity = {
   close_date: string;
 };
 
-export type OpportunitiesTableProps = {
-  fetchData: () => Promise<Opportunity[]>;
+export type OpportunitiesListProps = {
+  showOnlyFollowed?: boolean;
+};
+
+export type OpportunitiesState = {
+  list: Opportunity[];
+  filteredList: Opportunity[];
+  followedList: Opportunity[];
+  filteredFollowedList: Opportunity[];
+  filters: {
+    startDate: string | null;
+    endDate: string | null;
+    type: string | null;
+  };
+  loading: boolean;
+  error: string | null;
 };
